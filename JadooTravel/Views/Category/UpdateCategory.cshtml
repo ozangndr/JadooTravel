@@ -1,0 +1,75 @@
+﻿@model JadooTravel.Dtos.CategoryDtos.GetCategoryByldDto
+
+@{
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    .card-header.bg-warning {
+        background: linear-gradient(135deg, #ffca2c, #f7a600);
+    }
+
+    .form-control:focus {
+        border-color: #f7a600;
+        box-shadow: 0 0 0 0.2rem rgba(247, 166, 0, 0.25);
+    }
+
+    .btn-warning {
+        transition: all 0.2s ease-in-out;
+    }
+
+        .btn-warning:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(247, 166, 0, 0.3);
+        }
+
+    .btn-outline-secondary:hover {
+        background-color: #f8f9fa;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-gradient bg-warning text-dark text-center p-3 rounded-top-4">
+                    <h4 class="fw-semibold mb-0">
+                        <i class="bi bi-pencil-square"></i> Kategori Güncelle
+                    </h4>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post">
+                        <input type="hidden" asp-for="CategoryId" />
+
+                        <div class="mb-4">
+                            <label asp-for="CategoryName" class="form-label fw-semibold">
+                                <i class="bi bi-tag"></i> Kategori Adı
+                            </label>
+                            <input asp-for="CategoryName" class="form-control form-control-lg" placeholder="Kategori adını giriniz..." required />
+                            <span asp-validation-for="CategoryName" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="/Category/CategoryList" class="btn btn-outline-secondary px-4">
+                                <i class="bi bi-arrow-left"></i> Geri Dön
+                            </a>
+                            <button type="submit" class="btn btn-warning text-dark fw-semibold px-4">
+                                <i class="bi bi-check-circle"></i> Güncelle
+                            </button>
+                        </div>
+                    </form>
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="alert alert-success mt-4 text-center fw-semibold">
+                            @ViewBag.Message
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿@model JadooTravel.Dtos.DestinationDtos.GetDestinationByIdDto
+
+@{
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-header bg-info bg-gradient text-white text-center rounded-top-4 py-3">
+                    <h4 class="fw-bold mb-0">
+                        <i class="bi bi-pencil-square"></i> Tur Bilgilerini Güncelle
+                    </h4>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <!-- Başarı mesajı -->
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+                            <i class="bi bi-check-circle-fill me-2"></i> @ViewBag.Message
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form method="post" class="needs-validation" novalidate>
+                        <input type="hidden" asp-for="DestinationId" />
+
+                        <div class="mb-3">
+                            <label asp-for="CityCountry" class="form-label fw-semibold">
+                                <i class="bi bi-geo-alt-fill"></i> Şehir / Ülke
+                            </label>
+                            <input asp-for="CityCountry" class="form-control form-control-lg" placeholder="Şehir ve ülke giriniz..." required />
+                            <div class="invalid-feedback">Lütfen şehir ve ülke bilgisini giriniz.</div>
+                            <span asp-validation-for="CityCountry" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ImageUrl" class="form-label fw-semibold">
+                                <i class="bi bi-image"></i> Fotoğraf URL
+                            </label>
+                            <input asp-for="ImageUrl" class="form-control form-control-lg" placeholder="Fotoğraf URL'sini giriniz..." required />
+                            <div class="invalid-feedback">Lütfen fotoğraf URL'sini giriniz.</div>
+                            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="Price" class="form-label fw-semibold">
+                                    <i class="bi bi-cash-stack"></i> Fiyat
+                                </label>
+                                <input asp-for="Price" class="form-control" placeholder="Fiyat giriniz..." required />
+                                <div class="invalid-feedback">Lütfen fiyatı giriniz.</div>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="DayNight" class="form-label fw-semibold">
+                                    <i class="bi bi-sunrise"></i> Gün / Gece
+                                </label>
+                                <input asp-for="DayNight" class="form-control" placeholder="Örn: 5 Gün - 4 Gece" required />
+                                <div class="invalid-feedback">Lütfen gün/gece bilgisini giriniz.</div>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="Capacity" class="form-label fw-semibold">
+                                    <i class="bi bi-people"></i> Kapasite
+                                </label>
+                                <input asp-for="Capacity" class="form-control" placeholder="Kapasite giriniz..." required />
+                                <div class="invalid-feedback">Lütfen kapasiteyi giriniz.</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Description" class="form-label fw-semibold">
+                                <i class="bi bi-card-text"></i> Açıklama
+                            </label>
+                            <textarea asp-for="Description" rows="5" class="form-control" placeholder="Tur açıklamasını giriniz..." required></textarea>
+                            <div class="invalid-feedback">Lütfen açıklama giriniz.</div>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="/Destination/DestinationList" class="btn btn-outline-secondary px-4">
+                                <i class="bi bi-arrow-left"></i> Geri Dön
+                            </a>
+                            <button type="submit" class="btn btn-info text-white fw-semibold px-4">
+                                <i class="bi bi-check-circle"></i> Turu Güncelle
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+

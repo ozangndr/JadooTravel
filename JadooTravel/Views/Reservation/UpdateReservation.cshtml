@@ -1,0 +1,78 @@
+﻿@model JadooTravel.Dtos.ReservationDtos.GetReservationByIdDto
+@{
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-gradient bg-success text-white d-flex align-items-center p-3">
+            <h4 class="mb-0 fw-semibold">
+                <i class="bi bi-pencil-square"></i> Rezervasyon Güncelle
+            </h4>
+        </div>
+
+        <div class="card-body p-4">
+            <form method="post">
+                <input type="hidden" asp-for="ReservationId" />
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Ad Soyad</label>
+                        <input type="text" asp-for="NameSurname" class="form-control form-control-lg shadow-sm" placeholder="Ad Soyad giriniz" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">E-posta</label>
+                        <input type="email" asp-for="Email" class="form-control form-control-lg shadow-sm" placeholder="E-posta adresini giriniz" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Telefon Numarası</label>
+                        <input type="text" asp-for="PhoneNumber" class="form-control form-control-lg shadow-sm" placeholder="Telefon numarasını giriniz" />
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">Açıklama</label>
+                        <textarea asp-for="Description" rows="4" class="form-control shadow-sm" placeholder="Açıklama giriniz"></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <button type="submit" class="btn btn-success btn-lg px-5 me-2 rounded-pill shadow-sm">
+                        <i class="bi bi-check-circle"></i> Güncelle
+                    </button>
+                    <a href="/Reservation/ReservationList" class="btn btn-outline-secondary btn-lg px-5 rounded-pill shadow-sm">
+                        <i class="bi bi-arrow-left"></i> Listeye Dön
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+    .form-control:focus {
+        border-color: #198754;
+        box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+    }
+
+    .btn-success:hover {
+        background-color: #157347;
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #6c757d;
+        color: white !important;
+    }
+</style>

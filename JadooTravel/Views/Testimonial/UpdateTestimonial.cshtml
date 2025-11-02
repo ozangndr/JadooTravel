@@ -1,0 +1,61 @@
+﻿@model JadooTravel.Dtos.TestimonialDtos.GetTestimonialByIdDto
+
+@{
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="card border-0 shadow-lg rounded-4 mx-auto" style="max-width: 650px;">
+        <div class="card-header bg-primary bg-gradient text-white text-center py-3 rounded-top-4">
+            <h4 class="mb-0 fw-semibold">
+                <i class="bi bi-pencil-square me-2"></i>Referans Güncelle
+            </h4>
+        </div>
+
+        <div class="card-body bg-light p-4">
+            <form method="post" class="needs-validation" novalidate>
+                <input type="hidden" asp-for="TestimonialId" />
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Ad Soyad</label>
+                    <input type="text" asp-for="NameSurname" class="form-control shadow-sm" placeholder="Ad Soyad Giriniz" />
+                    <span asp-validation-for="NameSurname" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Şehir / Ülke</label>
+                    <input type="text" asp-for="CityCountry" class="form-control shadow-sm" placeholder="Şehir ve Ülke Giriniz" />
+                    <span asp-validation-for="CityCountry" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Açıklama</label>
+                    <textarea asp-for="Description" class="form-control shadow-sm" rows="3" placeholder="Açıklama Giriniz"></textarea>
+                    <span asp-validation-for="Description" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Resim URL</label>
+                    <input type="url" asp-for="ImageUrl" class="form-control shadow-sm" placeholder="Resim URL Giriniz" />
+                    <span asp-validation-for="ImageUrl" class="text-danger small"></span>
+                </div>
+
+                <div class="text-center mt-4">
+                    <img src="@Model.ImageUrl" class="img-thumbnail rounded shadow-sm" alt="Referans Görseli" width="140" />
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="/Testimonial/TestimonialList" class="btn btn-outline-secondary px-4">
+                        <i class="bi bi-arrow-left"></i> Geri Dön
+                    </a>
+                    <button type="submit" class="btn btn-primary px-4">
+                        <i class="bi bi-save"></i> Güncelle
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

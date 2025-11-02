@@ -1,0 +1,117 @@
+﻿@*
+    BookingSteps Component (Rezervasyon Adımları - Modern Tasarım)
+*@
+
+<style>
+    .step-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+    .icon-box {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .reservation-card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+        .reservation-card .card-header {
+            background: linear-gradient(135deg, #17a2b8, #007bff);
+            color: white;
+        }
+</style>
+
+<section class="pt-5" id="booking">
+    <div class="container py-5">
+        <div class="row g-5 align-items-start">
+
+            <!-- Sol Taraf: Adımlar -->
+            <div class="col-lg-6">
+                <div class="mb-4">
+                    <h5 class="text-secondary">🚀 Hızlı ve Kolay</h5>
+                    <h3 class="fw-bold text-capitalize">3 Basit Adımda Rezervasyonunuzu Tamamlayın</h3>
+                </div>
+
+                <!-- 1. Adım -->
+                <div class="step-card d-flex align-items-start bg-white p-3 rounded-4 mb-4 shadow-sm">
+                    <div class="icon-box bg-primary text-white me-3">
+                        <img src="/public/assets/img/steps/selection.svg" width="28" alt="Adım 1">
+                    </div>
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1">1. Adım: Lokasyonu Seçin</h5>
+                        <p class="text-muted mb-0">Hayalinizdeki tatil destinasyonunu seçin. İstediğiniz yere kolayca seyahat edin.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Adım -->
+                <div class="step-card d-flex align-items-start bg-white p-3 rounded-4 mb-4 shadow-sm">
+                    <div class="icon-box bg-danger text-white me-3">
+                        <img src="/public/assets/img/steps/water-sport.svg" width="28" alt="Adım 2">
+                    </div>
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1">2. Adım: Ödeme Yapın</h5>
+                        <p class="text-muted mb-0">Uygun tatili bulduktan sonra güvenli ödeme yapın ve valizinizi hazırlayın.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Adım -->
+                <div class="step-card d-flex align-items-start bg-white p-3 rounded-4 shadow-sm">
+                    <div class="icon-box bg-info text-white me-3">
+                        <img src="/public/assets/img/steps/taxi.svg" width="28" alt="Adım 3">
+                    </div>
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1">3. Adım: Havaalanına Gidin</h5>
+                        <p class="text-muted mb-0">Seçtiğiniz tarihte havaalanına gidin ve tatilinizin keyfini çıkarın.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ Taraf: Rezervasyon Formu -->
+            <div class="col-lg-6">
+                <div class="card reservation-card shadow-lg">
+                    <div class="card-header text-center py-4">
+                        <h4 class="fw-bold mb-0">📋 Rezervasyon Formu</h4>
+                        <p class="mb-0">Bilgilerinizi girerek hemen rezervasyon yapın</p>
+                    </div>
+                    <div class="card-body p-4">
+                        <form method="post">
+                            <div class="mb-3">
+                                <input type="text" class="form-control form-control-lg" placeholder="Adınız Soyadınız" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control form-control-lg" placeholder="Telefon Numaranız" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control form-control-lg" placeholder="E-mail Adresiniz" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea rows="3" class="form-control form-control-lg" placeholder="Eklemek İstedikleriniz"></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-info btn-lg text-white rounded-3 shadow">
+                                    🚀 Rezervasyon Yap
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>

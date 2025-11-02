@@ -1,0 +1,52 @@
+﻿@model List<ResultTestimonialDto>
+@{
+    int count = 0;
+}
+
+<section id="testimonial" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="text-start">
+                    <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">
+                        İnsanlar Bizim Hakkımızda Ne Diyor?
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div id="testimonialIndicator" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach (var item in Model)
+                        {
+                            count++;
+                            <div class="carousel-item position-relative @(count == 1 ? "active" : "")">
+                                <div class="card shadow border-0" style="border-radius:15px;">
+                                    <div class="card-body p-4 d-flex flex-column align-items-center text-center">
+                                        <img src="@item.ImageUrl"
+                                             alt="@item.NameSurname"
+                                             class="rounded-circle mb-3 shadow-sm"
+                                             style="width:90px; height:90px; object-fit:cover; object-position:center; border:3px solid #fff;" />
+
+                                        <p class="fw-medium mb-4 text-secondary">"@item.Description"</p>
+                                        <h5 class="text-dark fw-semibold mb-1">@item.NameSurname</h5>
+                                        <p class="fw-medium fs--1 mb-0 text-muted">@item.CityCountry</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="carousel-navigation d-flex flex-column justify-content-between position-absolute end-0 top-50 translate-middle-y z-index-1 me-3" style="height:60px;width:20px;">
+                        <button class="carousel-control-prev position-static" type="button" data-bs-target="#testimonialIndicator" data-bs-slide="prev">
+                            <img src="~/public/assets/img/icons/up.svg" width="16" alt="icon" />
+                        </button>
+                        <button class="carousel-control-next position-static" type="button" data-bs-target="#testimonialIndicator" data-bs-slide="next">
+                            <img src="~/public/assets/img/icons/down.svg" width="16" alt="icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

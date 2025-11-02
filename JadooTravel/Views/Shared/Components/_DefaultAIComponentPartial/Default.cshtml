@@ -1,0 +1,70 @@
+﻿<section class="pt-6">
+    <div class="container">
+        <div class="py-8 px-5 position-relative text-center" style="background-color: rgba(223, 215, 249, 0.199);border-radius: 129px 20px 20px 20px;">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <h2 class="text-secondary lh-1-7 mb-7">Gezilecek Yerleri Senin İçin Listeleyebiliriz...</h2>
+                    <form class="row g-3 align-items-center w-lg-75 mx-auto" id="travelForm" onsubmit="return getAIPlaces(event)">
+                        <div class="col-sm">
+                            <div class="input-group-icon">
+                                <input id="locationInput" class="form-control form-little-squirrel-control" type="text" placeholder="Ülke veya Şehir Girin" required />
+                            </div>
+                        </div>
+                        <div class="col-sm-auto">
+                            <button class="btn btn-danger orange-gradient-btn fs--1">Ara</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="placesModal" tabindex="-1" aria-labelledby="placesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="placesModalLabel">Gezilecek Yerler</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-start" id="placesList">
+                <p>Yükleniyor...</p>
+            </div>
+        </div>
+    </div>
+    <div id="placesList" class="text-start">
+        <p>Yükleniyor...</p>
+    </div>
+</div>
+
+<script>
+    async function getAIPlaces(event) {
+        event.preventDefault();
+        const location = document.getElementById('locationInput').value.trim();
+        if (!location) return;
+
+        document.getElementById('placesList').innerHTML = "<p>Yükleniyor...</p>";
+
+        const modal = new bootstrap.Modal(document.getElementById('placesModal'));
+        modal.show();
+
+        try {
+            const response = await fetch(`/AI/GetPlaces?location=${encodeURIComponent(location)}`);
+            const data = await response.json();
+
+            if (data && data.places && data.places.length > 0) {
+                document.getElementById('placesList').innerHTML = `
+                    <ul class="list-group">
+                        ${data.places.map(p => `<li class="list-group-item">${p}</li>`).join('')}
+                    </ul>`;
+            } else {
+                document.getElementById('placesList').innerHTML = "<p>Sonuç bulunamadı.</p>";
+            }
+        } catch (error) {
+            document.getElementById('placesList').innerHTML = "<p>Bir hata oluştu.</p>";
+            console.error(error);
+        }
+    }
+</script>

@@ -1,0 +1,48 @@
+﻿@model List<ResultPartnerDto>
+
+<style>
+    .partner-card {
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+        .partner-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+    .partner-img-wrap {
+        height: 100px; /* tüm resim kutuları aynı yükseklikte */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 8px;
+    }
+
+    .partner-img {
+        max-height: 100%; /* yükseklik sınırı */
+        max-width: 100%; /* genişlik sınırı */
+        object-fit: contain; /* kırpma yok, orantılı küçültme */
+        display: block;
+    }
+</style>
+
+
+<div class="position-relative pt-9 pt-lg-8 pb-6 pb-lg-8">
+    <div class="container">
+        <h3 class="text-center mb-5 fw-semibold">Partnerlerimiz</h3>
+        <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 g-3">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <div class="card shadow-sm partner-card text-center">
+                        <div class="card-body partner-img-wrap">
+                            <img class="partner-img" src="@item.IconUrl" alt="@item.Title" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

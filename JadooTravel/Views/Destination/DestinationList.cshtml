@@ -1,0 +1,106 @@
+﻿@model List<JadooTravel.Dtos.DestinationDtos.ResultDestinationDto>
+
+@{
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    .card-header.bg-success {
+        background: linear-gradient(135deg, #28a745, #20c997);
+    }
+
+    .table thead th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #495057;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1fdf5;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .btn-outline-success:hover {
+        background-color: #198754;
+        color: #fff !important;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: #fff !important;
+    }
+
+    .btn-light:hover {
+        background-color: #e9f9ef;
+    }
+
+    .card {
+        transition: all 0.3s ease-in-out;
+    }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-gradient bg-success text-white d-flex justify-content-between align-items-center p-3 rounded-top-4">
+            <h4 class="mb-0 fw-semibold">
+                <i class="bi bi-globe2"></i> Tur Listesi
+            </h4>
+            <a href="/Destination/CreateDestination/" class="btn btn-light text-success fw-semibold">
+                <i class="bi bi-plus-circle"></i> Yeni Tur Ekle
+            </a>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Şehir / Ülke</th>
+                            <th>Fiyat</th>
+                            <th>Kapasite</th>
+                            <th class="text-center">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="fw-medium">@item.DestinationId</td>
+                                <td>@item.CityCountry</td>
+                                <td>@item.Price ₺</td>
+                                <td>@item.Capacity</td>
+                                <td class="text-center">
+                                    <a href="/Destination/UpdateDestination/@item.DestinationId"
+                                       class="btn btn-sm btn-outline-success me-2">
+                                        <i class="bi bi-pencil-square"></i> Güncelle
+                                    </a>
+                                    <a href="/Destination/DeleteDestination/@item.DestinationId"
+                                       class="btn btn-sm btn-outline-danger"
+                                       onclick="return confirm('Bu turu silmek istediğinize emin misiniz?');">
+                                        <i class="bi bi-trash3"></i> Sil
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @if (!Model.Any())
+            {
+                <div class="alert alert-warning text-center fw-semibold mt-3">
+                    <i class="bi bi-exclamation-circle"></i> Henüz eklenmiş bir tur bulunmamaktadır.
+                </div>
+            }
+        </div>
+    </div>
+</div>

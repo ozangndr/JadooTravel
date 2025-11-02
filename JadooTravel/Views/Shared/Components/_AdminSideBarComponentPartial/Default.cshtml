@@ -1,0 +1,123 @@
+﻿
+
+<style>
+    .left-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: #fff;
+        border-right: 1px solid #e5e7eb;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .scroll-sidebar {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .main-content {
+        margin-left: 20px;
+        padding: 20px;
+    }
+</style>
+
+<aside class="left-sidebar">
+    <div>
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+                <li>
+                    <span class="sidebar-divider lg"></span>
+                </li>
+                <li class="nav-small-cap">
+                    <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
+                    <span class="hide-menu">SAYFALAR</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link primary-hover-bg justify-content-between" 
+                       href="/Chart/Index/" aria-expanded="false">
+                        <div class="d-flex align-items-center gap-6">
+                            <span class="d-flex">
+                                <iconify-icon icon="solar:accessibility-line-duotone" class=""></iconify-icon>
+                            </span>
+                            <span class="hide-menu">İstatistikler</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link primary-hover-bg justify-content-between" 
+                       href="/Category/CategoryList/" aria-expanded="false">
+                        <div class="d-flex align-items-center gap-6">
+                            <span class="d-flex">
+                                <iconify-icon icon="solar:accessibility-line-duotone" class=""></iconify-icon>
+                            </span>
+                            <span class="hide-menu">Tur Kategorileri</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link primary-hover-bg justify-content-between" 
+                       href="/Destination/DestinationList/"
+                       aria-expanded="false">
+                        <div class="d-flex align-items-center gap-6">
+                            <span class="d-flex">
+                                <iconify-icon icon="solar:card-search-line-duotone" class=""></iconify-icon>
+                            </span>
+                            <span class="hide-menu">Turlar</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link primary-hover-bg justify-content-between" 
+                       href="/Reservation/ReservationList/" aria-expanded="false">
+                        <div class="d-flex align-items-center gap-6">
+                            <span class="d-flex">
+                                <iconify-icon icon="solar:gallery-bold-duotone" class=""></iconify-icon>
+                            </span>
+                            <span class="hide-menu">Rezervasyonlar</span>
+                        </div>
+
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link primary-hover-bg justify-content-between" 
+                       href="/Partner/PartnerList/" aria-expanded="false">
+                        <div class="d-flex align-items-center gap-6">
+                            <span class="d-flex">
+                                <iconify-icon icon="solar:mask-happly-line-duotone" class=""></iconify-icon>
+                            </span>
+                            <span class="hide-menu">Partnerler</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link primary-hover-bg justify-content-between" 
+                       href="/Testimonial/TestimonialList/" aria-expanded="false">
+                        <div class="d-flex align-items-center gap-6">
+                            <span class="d-flex">
+                                <iconify-icon icon="solar:quit-full-screen-square-line-duotone" class=""></iconify-icon>
+                            </span>
+                            <span class="hide-menu">Referanslar</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link primary-hover-bg justify-content-between"
+                       href="/Login/Logout" aria-expanded="false">
+                        <div class="d-flex align-items-center gap-6">
+                            <span class="d-flex">
+                                <iconify-icon icon="solar:quit-full-screen-square-line-duotone"></iconify-icon>
+                            </span>
+                            <span class="hide-menu">Çıkış Yap</span>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- diğer linkler -->
+            </ul>
+        </nav>
+    </div>
+</aside>
+
