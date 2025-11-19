@@ -15,7 +15,7 @@ namespace JadooTravel.Controllers
         public AIController(HttpClient httpClient, IConfiguration configuration)
         {
             _httpClient = httpClient;
-           
+            _apiKey = configuration["OpenAI:ApiKey"];
         }
 
         [HttpGet]

@@ -1,3 +1,4 @@
+using JadooTravel.Controllers;
 using JadooTravel.Services.CategoryServices;
 using JadooTravel.Services.DestinationServices;
 using JadooTravel.Services.PartnerServices;
@@ -38,6 +39,8 @@ builder.Services.AddControllersWithViews()
     .AddDataAnnotationsLocalization();
 
 builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<AIController>();
+
 
 var app = builder.Build();
 
