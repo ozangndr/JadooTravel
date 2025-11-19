@@ -1,48 +1,55 @@
 # JadooTravel
 
-# Travel & Tour Reservation Platform
+Travel & Tour Reservation Platform
 
-ASP.NET Core MVC 6.0 tabanlı, çok dilli (TR / EN / FR / ES) seyahat ve tur rezervasyon platformu. Kullanıcılar yapay zekâ destekli rota önerileri alabilir, turlar hakkında bilgi edinebilir ve rezervasyon oluşturabilir.
+ASP.NET Core MVC 6.0 tabanlı, çok dilli (TR / EN / FR / ES) seyahat ve tur rezervasyon platformu. Kullanıcılar yapay zekâ destekli rota önerileri alabilir, turlar hakkında detaylı bilgi edinebilir ve hızlıca rezervasyon oluşturabilir.
 
----
+Özellikler
+🌐 Çoklu Dil Desteği
 
-## Özellikler
+Platform, Türkçe, İngilizce, Fransızca ve İspanyolca dillerinde hizmet verir.
+Özel LanguageService ile OpenAI API üzerinden dinamik ve akıcı çeviri sağlanır, içerik her dil için optimize edilir.
 
-### Çoklu Dil Desteği
-![Dil Desteği](images/language.png)  
-Özel `LanguageService` ile OpenAI API üzerinden dinamik ve akıcı çeviri desteği.
+🤖 Yapay Zeka Rota Önerisi
 
-### Yapay Zeka Rota Önerisi
-![AI Rota](images/ai_route.png)  
-OpenAI GPT API entegrasyonu ile kişiselleştirilmiş tur tavsiyeleri.
+Kullanıcıların tercihlerine göre akıllı rota ve tur önerileri sunulur.
+OpenAI GPT API ile kişiselleştirilmiş, optimize edilmiş ve verimli seyahat planları oluşturulur.
 
-### Rezervasyon Sistemi
-![Rezervasyon](images/reservation.png)  
-MongoDB üzerinde hızlı ve güvenli rezervasyon yönetimi.
+📅 Rezervasyon Sistemi
 
-### Dinamik Tur Kartları
-![Tur Kartları](images/tour_cards.png)  
-Görseller, açıklamalar, fiyat bilgisi ve aktif/pasif duruma göre otomatik güncellenen kart yapısı.
+MongoDB üzerinde çalışan rezervasyon sistemi sayesinde hızlı, güvenli ve esnek rezervasyon yönetimi sağlanır.
+Kullanıcılar tur tarihlerini seçebilir, ödeme ve rezervasyon onay süreçlerini yönetebilir.
 
-### Admin Paneli
-![Admin Panel](images/admin_panel.png)  
-ASP.NET Core MVC katmanlı yapı ile CRUD işlemleri ve yönetim kolaylığı.
+🗂️ Dinamik Tur Kartları
 
-### ViewComponent & Partial View
-![ViewComponent](images/view_component.png)  
-Modüler ve tekrar kullanılabilir UI bileşenleri.
+Turlar, görseller, açıklamalar, fiyat bilgisi ve durumlarına göre otomatik olarak güncellenen kartlar ile gösterilir.
+Kullanıcı deneyimi, görsellik ve kolay anlaşılır tasarım ön plandadır.
 
-### Dependency Injection & AutoMapper
-![Dependency Injection](images/dependency_injection.png)  
-Temiz, sürdürülebilir ve genişletilebilir kod mimarisi.
+🔧 Admin Paneli
 
----
+ASP.NET Core MVC katmanlı yapı sayesinde CRUD işlemleri ve yönetim kolayca yapılır.
+Yöneticiler tur ekleyebilir, düzenleyebilir ve pasif/aktif durumlarını kontrol edebilir.
 
-## Kullanılan Teknolojiler
+🧩 ViewComponent & Partial View
 
-- Backend: ASP.NET Core MVC 6.0, C#  
-- Database: MongoDB (NoSQL)  
-- Frontend: HTML, CSS, Bootstrap 5  
-- Tools: AutoMapper, Dependency Injection  
-- AI Service: OpenAI GPT API  
-- Custom Service: `LanguageService` (Dinamik Çoklu Dil Çevirisi)
+UI bileşenleri modüler ve yeniden kullanılabilir şekilde tasarlanmıştır.
+Kod tekrarını azaltır ve bakım süreçlerini kolaylaştırır.
+
+⚙️ Dependency Injection & AutoMapper
+
+Temiz ve sürdürülebilir kod mimarisi için Dependency Injection kullanılır.
+AutoMapper ile veri transferleri hızlı ve hatasız gerçekleştirilir, kod bakımı kolaylaşır.
+
+Kullanılan Teknolojiler
+
+Backend: ASP.NET Core MVC 6.0, C#
+
+Database: MongoDB (NoSQL)
+
+Frontend: HTML, CSS, Bootstrap 5
+
+Tools: AutoMapper, Dependency Injection
+
+AI Service: OpenAI GPT API
+
+Custom Service: LanguageService (Dinamik Çoklu Dil Çevirisi)
