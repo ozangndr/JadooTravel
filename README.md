@@ -53,3 +53,8 @@ Tools: AutoMapper, Dependency Injection
 AI Service: OpenAI GPT API
 
 Custom Service: LanguageService (Dinamik Çoklu Dil Çevirisi)
+
+
+https://github.com/user-attachments/assets/c89e1205-2cc0-41a8-8141-fdb37a81f60d
+
+
